@@ -1,4 +1,4 @@
-# `🚀 T2L`
+# 🚀 T2L
 
 ![Version](https://img.shields.io/github/package-json/version/adrianofinco/time2launch)
 [![License](https://img.shields.io/github/license/adrianofinco/time2launch)](LICENSE.txt)
@@ -9,6 +9,15 @@
 ![Vue Router](https://img.shields.io/github/package-json/dependency-version/adrianofinco/time2launch/vue-router)
 
 Time2Launch is a website for tracking upcoming spacecraft launches. Made with Vite, VueJs, and TailwindCSS.
+
+Using the **Launch Library 2 API** the website allows following space launches from multiples companies and governments while providing detailed information about the launch.
+
+Part of the shown information include:
+- mission name
+- provider (responsible for the launch)
+- launch site
+- location (city, state, country)
+- countdown timer
 
 ## Getting started
 
