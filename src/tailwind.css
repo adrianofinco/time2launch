@@ -1,0 +1,34 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  .bg-constellation {
+    @apply bg-black;
+    background-image: radial-gradient(rgb(51, 51, 51) 1px, transparent 0px), radial-gradient(rgb(34, 34, 34) 1px, transparent 0px);
+    background-position: 0px 0px, 25px 25px;
+    background-position-x: 0px, 25px;
+    background-position-y: 0px, 25px;
+    background-attachment: fixed;
+    background-size: 25px 25px;
+  }
+}
+
+@layer utilities {
+  @keyframes alert {
+    50% {
+      @apply text-red-500;
+    }
+  }
+  .animate-alert {
+    animation: alert 2s linear infinite;
+  }
+}
