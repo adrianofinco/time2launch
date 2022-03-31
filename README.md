@@ -3,8 +3,7 @@
 ![Version](https://img.shields.io/github/package-json/version/adrianofinco/time2launch)
 [![License](https://img.shields.io/github/license/adrianofinco/time2launch)](LICENSE.txt)
 [![Issues](https://img.shields.io/github/issues/adrianofinco/time2launch)](https://github.com/adrianofinco/time2launch/issues)
-[![Pull requests](https://img.shields.io/github/issues-pr-closed/adrianofinco/time2launch)]
-(https://github.com/adrianofinco/time2launch/pulls)
+[![Pull requests](https://img.shields.io/github/issues-pr-closed/adrianofinco/time2launch)](https://github.com/adrianofinco/time2launch/pulls)
 
 ![Vite](https://img.shields.io/github/package-json/dependency-version/adrianofinco/time2launch/dev/vite?logo=vite)
 ![Vue](https://img.shields.io/github/package-json/dependency-version/adrianofinco/time2launch/vue?logo=vue.js)
