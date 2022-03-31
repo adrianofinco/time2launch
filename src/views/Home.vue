@@ -1,29 +1,61 @@
-<script setup>
-import ButtonRepo from '@/components/ButtonRepo.vue'
-</script>
-
 <template>
-  <div class="bg-gray-50">
-    <div
-      class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8"
-    >
-      <h2
-        class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10"
-      >
-        Ready to dive in?
-        <br />
-        <span class="text-indigo-600">Vite + Vue 3 + Tailwind CSS</span>
-      </h2>
-      <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-        <div class="inline-flex rounded-md shadow">
-          <router-link
-            to="/about"
-            class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out hover:bg-indigo-500 focus:outline-none"
-            >Next Page</router-link
-          >
-        </div>
-        <ButtonRepo />
-      </div>
-    </div>
+  <div v-if="launchList.length" class="py-10 px-6">
+    <LaunchCard 
+      v-for="launchInfo in launchList"
+      :key="launchInfo.id"
+      :launchInfo="launchInfo"
+      />
+  </div>
+  <div v-if="fetchError" class="py-10 px-6">
+    <GenericCard>
+      An error occurred while fetching upcoming launches.
+      YOu can try refreshing the page,
+      if the problem persists 
+        <a class="underline text-yellow-400 hover:text-yellow-500" 
+          target="_blank" href="https://github.com/adrianofinco/time2launch/issues">open an issue</a> 
+      on Github.
+    </GenericCard>
   </div>
 </template>
+
+<script >
+import LaunchCard from '@/components/LaunchCard.vue';
+import GenericCard from '@/components/GenericCard.vue';
+import { fetchData } from '@/helper.js';
+
+export default {
+  components: { LaunchCard, GenericCard },
+  data () {
+    return {
+      launchList: [],
+      fetchError: false
+    }
+  },
+  created() {
+    fetchData('upcoming').then(launchData => {
+      if (Array.isArray(launchData) && launchData.length == 0) {
+        this.fetchError = true;
+        return;
+      }
+
+      for (let item of launchData.results) {
+        this.launchList.push({
+          id: item.id,
+          image: item.image,
+          name: item.name,
+          launchConfirmed: item.status.id == 1,
+          launchProvider: {
+            name: item.launch_service_provider.name,
+            type: item.launch_service_provider.type
+          },
+          launchSite: {
+            name: item.pad.name,
+            location: item.pad.location.name
+          },
+          launchDate: item.net
+        });
+      }
+    })    
+  }
+}
+</script>
