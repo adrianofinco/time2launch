@@ -6,6 +6,9 @@
 
 @layer base {
   body {
+    @apply font-mono;
+  }
+  footer {
     @apply font-sans;
   }
 }

@@ -3,10 +3,12 @@
 ![Version](https://img.shields.io/github/package-json/version/adrianofinco/time2launch)
 [![License](https://img.shields.io/github/license/adrianofinco/time2launch)](LICENSE.txt)
 [![Issues](https://img.shields.io/github/issues/adrianofinco/time2launch)](https://github.com/adrianofinco/time2launch/issues)
+[![Pull requests](https://img.shields.io/github/issues-pr-closed/adrianofinco/time2launch)](https://github.com/adrianofinco/time2launch/pulls)
 
-![Vite](https://img.shields.io/github/package-json/dependency-version/adrianofinco/time2launch/dev/vite)
-![Vue](https://img.shields.io/github/package-json/dependency-version/adrianofinco/time2launch/vue)
+![Vite](https://img.shields.io/github/package-json/dependency-version/adrianofinco/time2launch/dev/vite?logo=vite)
+![Vue](https://img.shields.io/github/package-json/dependency-version/adrianofinco/time2launch/vue?logo=vue.js)
 ![Vue Router](https://img.shields.io/github/package-json/dependency-version/adrianofinco/time2launch/vue-router)
+![Tailwind CSS](https://img.shields.io/github/package-json/dependency-version/adrianofinco/time2launch/dev/tailwindcss?logo=tailwindcss)
 
 Time2Launch is a website for tracking upcoming spacecraft launches. Made with Vite, VueJs, and TailwindCSS.
 

@@ -8,7 +8,7 @@
     </header>
     -->
     <header class="bg-black-900 flex items-center px-4 py-2 border-b border-gray-700">
-      <h1 class="text-xl md:text-2xl lg:text-3xl tracking-wide font-mono flex-grow">
+      <h1 class="text-xl md:text-2xl lg:text-3xl tracking-wide flex-grow">
         <router-link to="/time2launch/">
           <b class="text-yellow-400">T</b>ime<b class="text-yellow-400">2L</b>aunch
         </router-link>

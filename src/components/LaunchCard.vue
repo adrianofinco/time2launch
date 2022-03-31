@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-[500px] lg:max-w-[800px] mx-auto font-mono uppercase border border-gray-700 rounded-xl overflow-hidden tracking-wide lg:flex flex-row mb-8">
+  <div class="max-w-[500px] lg:max-w-[800px] mx-auto uppercase border border-gray-700 rounded-xl overflow-hidden tracking-wide lg:flex flex-row mb-8">
     <div class="w-full border-b lg:border-r border-gray-700 relative lg:max-w-[250px]">
       <span class="absolute top-0 right-0 p-1 px-2 rounded-bl-lg tracking-wider font-sans font-bold normal-case bg-black bg-opacity-50 border-b border-l border-gray-700"
       >{{ launchInfo.launchProvider.type }}</span>
@@ -28,7 +28,7 @@
         <p class="font-bold text-gray-500 -mb-1">Location</p>
         <span class="">{{ launchInfo.launchSite.location }}</span>
       </div>
-      <CountdownTimer :launchDate="launchInfo.launchDate"/>
+      <CountdownTimer v-on:launchNear="confirmLaunch" :launchDate="launchInfo.launchDate"/>
     </div>
   </div>
 </template>
@@ -44,6 +44,11 @@ export default {
       required: false,
     },
     launched: false,
-  },  
+  },
+  methods: {
+    confirmLaunch() {
+      this.launchInfo.launchConfirmed = true;
+    }
+  }
 }
 </script>
