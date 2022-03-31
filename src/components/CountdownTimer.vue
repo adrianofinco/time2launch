@@ -1,5 +1,7 @@
 <template>
-  <div v-if="launchCounter > 0" class="grid grid-cols-8 grid-rows-2 place-items-center normal-case text-[32px] sm:text-[40px] sm:mt-6 mx-auto px-2 max-w-[300px] sm:max-w-[400px] lg:max-w-[350px]" >
+  <div v-if="launchCounter > 0" class="grid grid-cols-8 grid-rows-2 
+  place-items-center normal-case text-[32px] sm:text-[40px] 
+  sm:mt-6 mx-auto px-2 max-w-[300px] sm:max-w-[400px] lg:max-w-[350px]" >
     <span>T-</span>
     <span class="timer-days">{{ daysDisplay }}</span>
     <span>:</span>
@@ -13,7 +15,9 @@
     <span class="col-start-6 text-base">Minutes</span>
     <span class="col-start-8 text-base">Seconds</span>
   </div>
-  <p v-else class="text-center mt-4 font-sans text-2xl text-yellow-400 animate-alert">Launch in progress</p>
+  <div v-else class="min-h-[120px] sm:text-[40px] sm:mt-6 grid place-items-center">
+    <p class="font-sans text-2xl text-yellow-400 animate-alert">Launch in progress</p>
+  </div>
 </template>
 
 <script>
