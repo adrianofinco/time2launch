@@ -1,0 +1,8 @@
+{
+  "liveServer.settings.multiRootWorkspaceName": "projects",
+  "liveServer.settings.root": "./",
+  "liveServer.settings.mount": [
+    ["/time2launch", "./dist"]
+  ],
+  "liveServer.settings.AdvanceCustomBrowserCmdLine": "C:\\Users\\Usuário\\AppData\\Local\\Programs\\Opera GX\\launcher.exe"
+}
