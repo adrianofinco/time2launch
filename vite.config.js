@@ -12,4 +12,6 @@ export default defineConfig({
   server: {
     open: true,
   },
+  base: '/time2launch/'
 })
+
