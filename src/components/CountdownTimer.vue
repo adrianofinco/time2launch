@@ -69,6 +69,15 @@ export default {
       },
       immediate: true // This ensures the watcher is triggered upon creation
     }
+  },
+  methods: {
+    calculateLaunchCounter() {
+      this.launchCounter = Math.floor(((new Date(this.launchDate)).getTime() 
+          - (new Date()).getTime()) / 1000)
+    }
+  },
+  created() {
+    window.removeEventListener('focus', this.calculateLaunchCounter);
   }
 }
 
