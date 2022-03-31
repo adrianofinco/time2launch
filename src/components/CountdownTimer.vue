@@ -24,6 +24,8 @@
 export default {
   data () {
     return {
+      ConfirmLaunchThreshold: 300, /* when time remaining is N, will inform launch is near, 
+                                so parent can forcefully confirm launch  */
       launchCounter: Math.floor(
         (
           (
@@ -59,6 +61,7 @@ export default {
             this.launchCounter--;
           }, 1000);
         }
+        if (value < this.ConfirmLaunchThreshold) this.$emit('launchNear')
         this.days = Math.floor(value / (60 * 60 * 24));
         this.hours = Math.floor(value % (60 * 60 * 24) / (60 * 60));
         this.minutes = Math.floor(value % (60 * 60) / 60);

@@ -28,7 +28,7 @@
         <p class="font-bold text-gray-500 -mb-1">Location</p>
         <span class="">{{ launchInfo.launchSite.location }}</span>
       </div>
-      <CountdownTimer :launchDate="launchInfo.launchDate"/>
+      <CountdownTimer v-on:launchNear="confirmLaunch" :launchDate="launchInfo.launchDate"/>
     </div>
   </div>
 </template>
@@ -44,6 +44,11 @@ export default {
       required: false,
     },
     launched: false,
-  },  
+  },
+  methods: {
+    confirmLaunch() {
+      this.launchInfo.launchConfirmed = true;
+    }
+  }
 }
 </script>
