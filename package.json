@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "vue": "^3.2.36",
-    "vue-router": "^4.1.6"
+    "vue-router": "^5.0.4"
   },
   "devDependencies": {
     "@heroicons/vue": "^2.0.13",
